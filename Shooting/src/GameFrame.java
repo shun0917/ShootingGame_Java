@@ -11,23 +11,25 @@ public class GameFrame extends MyFrame {
 			clear();
 			GameWorld.player.draw(this);
 			GameWorld.player.move();
-			sleep(0.03);
 
-			int i = 0;
-
-			while (i < GameWorld.playerBullets.size()) {
-				PlayerBullet b = GameWorld.playerBullets.get(i);
-				b.draw(this);
-				b.move();
-				
-				if(b.y <0) {
-					GameWorld.playerBullets.remove(i);
-				}
-				else {
-					i++;
-				}
-			}
+			movePlayerBullets();
 			sleep(0.033);
 		}
 	}
+
+	public void movePlayerBullets() {
+		int i = 0;
+		while (i < GameWorld.playerBullets.size()) {
+			PlayerBullet b = GameWorld.playerBullets.get(i);
+			b.draw(this);
+			b.move();
+
+			if (b.y < 0) {
+				GameWorld.playerBullets.remove(i);
+			} else {
+				i++;
+			}
+		}
+	}
+
 }
