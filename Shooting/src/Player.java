@@ -43,10 +43,15 @@ public class Player extends Character implements KeyListener {
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0+3,-10-3));
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0-3,-10+3));
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0,-10));
+			System.out.println("弾の数" + GameWorld.playerBullets.size());
+		}
+		if(e.getKeyCode()==KeyEvent.VK_ENTER) {
+			System.out.println("Enterキーが押されました");
+			GameWorld.enterPressed=true;
 		}
 		
-		System.out.println("弾の数" + GameWorld.playerBullets.size());
 	}
+	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
