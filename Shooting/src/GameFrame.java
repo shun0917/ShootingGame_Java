@@ -66,7 +66,7 @@ public class GameFrame extends MyFrame {
 		
 		int i=0;
 		while(i<GameWorld.enemies.size()) {
-			Enemy e=GameWorld.enemies.remove(i);
+			Enemy e=GameWorld.enemies.get(i);
 			if((e.y>400)) {
 				GameWorld.enemies.remove(i);
 			}else {
